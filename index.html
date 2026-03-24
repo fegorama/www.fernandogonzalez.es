@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>FegorSoft</title>
+<script>
+function teletipo(cad, tmp, iden, cnt) {
+    if (cnt== null) cnt=0;
+    var letra = cad.substr(cnt,1)
+    cuadro=document.getElementById(iden);
+    while (letra == " ")
+      {
+      cnt++;
+      letra += cad.substr(cnt,1);
+     }
+    cuadro.innerHTML += letra;
+    cnt++
+    if (cnt < cad.length){
+       tempor=setTimeout(teletipo,tmp,cad,tmp,iden,cnt); 
+     }	 
+}
+function borra(iden) {
+	document.getElementById(iden).innerHTML = "";
+}
+</script>
+</head>
+<body style="background-color:black; color: white" onload="main()">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/FEGORsoft_logo.jpg">
+<!-- <tt><h1 id="m1"></h1></tt> -->
+<tt><h2 id="m2"></h2></tt>
+<br>
+<tt><h3 id="m3"></h3></tt>
+<tt><h3 id="m4"></h3></tt>
+<tt><h3 id="m5"></h3></tt>
+
+<script language="javascript">
+	function main() {
+    /*
+	teletipo(btoa("Welcome to FegorSoft"), 100, 'm1');
+	setTimeout(()=>{borra('m1');},5000);
+	setTimeout(()=>{teletipo("Welcome to FegorSoft", 100, 'm1');},5100);
+	*/
+	setTimeout(()=>{teletipo(btoa("Cybersecurity Services"), 10, 'm2');},1000);
+	setTimeout(()=>{borra('m2');},2000);
+	setTimeout(()=>{teletipo("Cybersecurity Services", 10, 'm2');},2100);
+
+  setTimeout(()=>{teletipo(btoa("  * Forensic investigations"), 10, 'm3');},2000);
+	setTimeout(()=>{borra('m3');},3000);
+	setTimeout(()=>{teletipo("  * Forensic investigations", 10, 'm3');},3100);
+
+  setTimeout(()=>{teletipo(btoa("  * Pentesting analytics"), 10, 'm4');},2000);
+	setTimeout(()=>{borra('m4');},3000);
+	setTimeout(()=>{teletipo("  * Pentesting analytics", 10, 'm4');},3100);
+
+  setTimeout(()=>{teletipo(btoa("  * Secure code"), 10, 'm5');},2000);
+	setTimeout(()=>{borra('m5');},3000);
+	setTimeout(()=>{teletipo("  * Secure code", 10, 'm5');},3100);
+}
+</script>
+</body>
+</html>
